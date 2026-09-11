@@ -1,0 +1,9 @@
+framework:
+    router:
+        # On définit l'URL en dur pour éviter le problème de lecture de variable d'environnement
+        default_uri: 'http://127.0.0.1/edsa-Colle_PHP/public'
+
+when@prod:
+    framework:
+        router:
+            strict_requirements: null

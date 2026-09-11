@@ -1,0 +1,97 @@
+{% extends 'Layout/template1.html.twig' %}
+
+{% block title %}Liste des filières{% endblock %}
+
+{% block content %}
+
+    <h1>Liste des filières</h1>
+    <p>Cliquez sur une filière pour voir la liste des étudiants</p>
+    <hr /><br />
+
+    <table>
+        <tr>
+            <th>id</th>
+            <th>CodeF</th>
+            <th>Intitulé Filière</th>
+            <th>Gérer</th>
+        </tr>
+
+        {% for filiere in filieres %}
+        <tr>
+            <td><a href="{{ path('app_filiere_show', {'id': filiere.id}) }}">{{ filiere.id }}</a></td>
+            <td><a href="{{ path('app_filiere_show', {'id': filiere.id}) }}">{{ filiere.codef }}</a></td>
+            <td>{{ filiere.intitulef }}</td>
+            <td class="actions">
+                <a href="{{ path('app_filiere_edit', {'id': filiere.id}) }}">
+                    <img src="{{ asset('images/edit.png') }}" class="icone edit"/>
+                </a>
+                <a href="{{ path('app_filiere_delete', {'id': filiere.id}) }}" onclick="return confirm('Supprimer ?');">
+                    <img src="{{ asset('images/delete.png') }}" class="icone delete"/>
+                </a>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="4">no records found</td>
+        </tr>
+        {% endfor %}
+
+        <tr>
+            <td colspan="4" class="actions">
+                <a href="{{ path('app_filiere_new') }}">
+                    <b>Ajouter Nouveau</b>
+                    <img src="{{ asset('images/addNew.png') }}" class="icone addNew"/>
+                </a>
+            </td>
+        </tr>
+    </table>
+
+{% endblock %}{% extends 'Layout/template1.html.twig' %}
+
+{% block title %}Liste des filières{% endblock %}
+
+{% block content %}
+
+    <h1>Liste des filières</h1>
+    <p>Cliquez sur une filière pour voir la liste des étudiants</p>
+    <hr /><br />
+
+    <table>
+        <tr>
+            <th>id</th>
+            <th>CodeF</th>
+            <th>Intitulé Filière</th>
+            <th>Gérer</th>
+        </tr>
+
+        {% for filiere in filieres %}
+        <tr>
+            <td><a href="{{ path('app_filiere_show', {'id': filiere.id}) }}">{{ filiere.id }}</a></td>
+            <td><a href="{{ path('app_filiere_show', {'id': filiere.id}) }}">{{ filiere.codef }}</a></td>
+            <td>{{ filiere.intitulef }}</td>
+            <td class="actions">
+                <a href="{{ path('app_filiere_edit', {'id': filiere.id}) }}">
+                    <img src="{{ asset('images/edit.png') }}" class="icone edit"/>
+                </a>
+                <a href="{{ path('app_filiere_delete', {'id': filiere.id}) }}" onclick="return confirm('Supprimer ?');">
+                    <img src="{{ asset('images/delete.png') }}" class="icone delete"/>
+                </a>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="4">no records found</td>
+        </tr>
+        {% endfor %}
+
+        <tr>
+            <td colspan="4" class="actions">
+                <a href="{{ path('app_filiere_new') }}">
+                    <b>Ajouter Nouveau</b>
+                    <img src="{{ asset('images/addNew.png') }}" class="icone addNew"/>
+                </a>
+            </td>
+        </tr>
+    </table>
+
+{% endblock %}

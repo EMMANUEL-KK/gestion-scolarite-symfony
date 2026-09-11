@@ -1,0 +1,13 @@
+{% extends 'Layout/template1.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - New Etudiant
+{% endblock %}
+
+{% block content %}
+    <h1>Create new Etudiant</h1>
+
+    {{ include('etudiant/_form.html.twig') }}
+
+    <a href="{{ path('app_etudiant_index') }}">back to list</a>
+{% endblock %}

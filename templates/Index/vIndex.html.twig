@@ -1,0 +1,33 @@
+{#Index/vIndex.html.twig#}
+
+{% extends 'Layout/template1.html.twig' %}
+
+{% block title %}
+    {{ parent()}}-- page accueil
+{% endblock %}
+{% block content%}
+<h1>Gestion de la scolarité </h1>
+<hr /><br /><br />
+<p class="pp">
+Bienvenue sur e-FSDM, l’application web de gestion universitaire de la Faculté des Sciences Dhar El Mehraz.  
+Cet espace numérique vous permet d’accéder facilement aux différents modules de notre système d’information: départements, professeurs, filières, modules, étudiants et salles.
+Grâce au menu principal, vous pouvez :
+</p>
+
+<ul>
+	<li>consulter les listes et détails des éléments,</li>
+	<li>ajouter de nouvelles informations,</li>
+	<li>modifier ou mettre à jour les données existantes,</li>
+	<li>supprimer les enregistrements devenus obsolètes.</li>
+</ul>
+
+<p class="pp">
+Notre objectif est de vous offrir une interface simple, claire et efficace, qui facilite la gestion quotidienne tout en illustrant les principes de la programmation orientée objet en PHP.
+</p>
+ {# <div class="btn"> 
+                    <button type="submit" id="btnSumbit">
+						<a href="{{path('filiere_ajouter')}}">Button Ajout Filiere</a>
+					</button>
+</div> #}
+
+{% endblock %}

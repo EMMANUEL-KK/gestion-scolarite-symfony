@@ -1,0 +1,13 @@
+{% extends 'Layout/template1.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - New Salle
+{% endblock %}
+
+{% block content %}
+    <h1>Create new Salle</h1>
+
+    {{ include('salle/_form.html.twig') }}
+
+    <a href="{{ path('app_salle_index') }}">back to list</a>
+{% endblock %}

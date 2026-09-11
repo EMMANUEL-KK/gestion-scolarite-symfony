@@ -1,0 +1,36 @@
+{% extends 'Layout/template1.html.twig' %}
+
+{% block title %}
+    {{ parent() }} -- Modification filière 
+{% endblock %}
+
+{% block content %}
+    <main>
+        <h1>Modifiez la filière</h1>
+        <hr>
+        <div>
+            {# Correction ici : fermeture propre des guillemets #}
+            <form action="{{ path('filiere_edit_submit', {'id': filiere.id}) }}" method="post">
+                
+                <div class="label-sem">
+                    <span class="err">{{ erreur.code ?? "" }}</span>
+                    <label for="code">Code:</label>
+                    {# Utilisation de "" pour éviter les erreurs si la valeur est nulle #}
+                    <input type="text" name="codef" id="code" placeholder="ex:GI" value="{{ filiere.codef ?? '' }}">
+                </div>
+
+                <div class="label-sem">
+                    <span class="err">{{ erreur.intitule_f ?? "" }}</span>
+                    <label for="intitule_f">Intitulé de la filière:</label>
+                    <input type="text" name="intitulef" id="intitule_f" placeholder="ex:Génie Informatique" value="{{ filiere.intitulef ?? '' }}">
+                </div>
+               
+                <div class="btn"> 
+                    <button type="submit" id="btnSumbit">Envoyer</button>
+                    <button type="reset" id="btnCancel">Annuler</button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'Layout/template1.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - New Module
+{% endblock %}
+
+{% block content %}
+    <h1>Create new Module</h1>
+
+    {{ include('module/_form.html.twig') }}
+
+    <a href="{{ path('app_module_index') }}">back to list</a>
+{% endblock %}

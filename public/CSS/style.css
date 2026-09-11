@@ -1,0 +1,446 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+    color: #333;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    background: #993300;
+    color: white;
+    padding: 1rem;
+}
+
+.logo {
+	margin-right: 20px;
+    width: 90px;          /* taille fixe */
+    height: 90px;         /* même hauteur que largeur */
+    object-fit: cover;     /* recadre l’image sans déformation */
+    border-radius: 50%;    /* arrondi complet → cercle */
+    border: 3px solid #993300; /* bordure décorative */
+    box-shadow: 0 0 8px rgba(0,0,0,0.3); /* ombre légère */
+}
+
+/*
+.logo {
+    height: 80px;
+    margin-right: 20px;
+}
+*/
+.header-text h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.date {
+    text-align: right;
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+.user-nav {
+    text-align: right;
+    background: #eee;
+    padding: 0.5rem 1rem;
+}
+
+.user-nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #993300;
+    font-weight: bold;
+}
+
+.layout {
+    display: flex;
+    min-height: 70vh;
+}
+/*
+.sidebar {
+    width: 220px;
+    background: #993300;
+    color: white;
+    padding: 1rem;
+}
+*/
+.content {
+    flex: 1;
+    background: #fff;
+    padding: 2rem;
+}
+
+.site-footer {
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* supprime les doubles bordures */
+    margin: 1rem 0;
+}
+
+table, th, td {
+    border: 1px solid #993300; /* couleur uniforme */
+}
+
+th {
+    background-color: #993300;
+    color: #fff;
+    padding: 0.5rem;
+    text-align: center;
+	border: 1px solid #fff;    /* bordure blanche */
+}
+
+td {
+    padding: 0.5rem;
+    text-align: left;
+}
+
+div.right {
+    text-align: right;
+}
+
+td.actions {
+    text-align: center;          /* contenu aligné à droite */
+    background-color: #f2f2f2;  /* gris clair */
+    padding: 0.5rem;            /* espace intérieur */
+	
+}
+
+/* Classe générique pour toutes les icônes */
+.icone {
+    width: 16px;       /* largeur adaptée pour une petite icône */
+    height: 16px;      /* hauteur adaptée */
+    vertical-align: middle; /* alignement avec le texte */
+    margin: 0 4px;     /* petit espace autour */
+    cursor: pointer;   /* curseur main pour indiquer l’action */
+}
+.icone:hover {
+    transform: scale(1.2);    /* légère augmentation au survol */
+}
+
+/* Optionnel : styles spécifiques */
+.icone.edit {
+    filter: hue-rotate(90deg); /* exemple : teinte différente pour l’édition */
+}
+
+.icone.delete {
+    filter: grayscale(50%);    /* exemple : effet visuel pour suppression */
+}
+.icone .reservation{
+    filter: brightness(1.1) saturate(1.2);  /* plus clair et plus saturé */
+}
+
+/* Icône AddNew plus grande */
+.icone.AddNew {
+    width: 40px;       /* largeur plus grande */
+    height: 40px;      /* hauteur plus grande */
+    margin: 0 6px;     /* espace légèrement augmenté */
+    cursor: pointer;
+    transition: transform 0.2s ease; /* effet visuel optionnel */
+}
+
+.icone.AddNew:hover {
+    transform: scale(1.1); /* petit zoom au survol */
+}
+
+
+/******* Pour template 3 et 4 */
+
+
+.main-nav {
+    background-color: #993300; /* couleur de fond */
+    padding: 10px;
+    text-align: center; /* centrer le menu */
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* affichage horizontal */
+    justify-content: left; /* centrer les items */
+    gap: 20px; /* espace entre les liens */
+}
+
+.main-nav li {
+    display: inline; /* chaque item en ligne */
+}
+
+.main-nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.main-nav a:hover {
+    background-color: #666;
+    border-radius: 4px;
+}
+
+
+/*********************************/
+.sidebar {
+    width: 220px;
+    background: #993300;
+    color: white;
+    padding: 1rem;
+    border-radius: 6px; /* angles arrondis */
+}
+
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px; /* espace entre les items */
+}
+
+.sidebar a {
+    display: block; /* occupe toute la largeur */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: #666;
+    transform: translateX(5px); /* petit effet de décalage */
+}
+
+
+p.pp {
+  font-family: "Segoe UI", Arial, sans-serif; /* police claire et moderne */
+  font-size: 1.1em;                          /* légèrement plus grand que par défaut */
+  line-height: 1.6;                          /* espacement confortable entre les lignes */
+  color: #333;                               /* gris foncé, plus doux que le noir pur */
+  background-color: #f9f9f9;                 /* léger fond gris pour mettre en valeur */
+  padding: 12px 18px;                        /* marges internes pour aérer le texte */
+  border-left: 4px solid #006699;            /* barre colorée pour accent visuel */
+  border-radius: 6px;                        /* coins arrondis pour un rendu moderne */
+  margin: 20px 0;                            /* espace autour du paragraphe */
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+}
+
+ul li {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 1.05em;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 24px;
+}
+
+ul li::before {
+  content: "➤";         /* flèche moderne */
+  color: #006699;       /* couleur institutionnelle */
+  position: absolute;
+  left: 0;
+}
+
+/*********Pour le formulaire********/
+.label-sem{
+    display: block;
+}
+input[type="text"],#filiere{
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    width: 50%;
+    height: 30px;
+    
+    /* Style de base pour que ce soit propre */
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    outline: none; /* On enlève le contour orange par défaut du navigateur */
+}
+
+/* L'effet au survol (léger changement de bordure) */
+input[type="text"]:hover, #filiere:hover {
+    border-color: #b8daff;
+}
+
+/* L'effet "Bleu Bootstrap" au clic (Focus) */
+input[type="text"]:focus, #filiere:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff; /* Le bleu de la bordure */
+    outline: 0;
+    /* C'est ce halo bleu qui fait tout le style */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); 
+}
+/* Styles de base mis à jour */
+#btnSumbit, #btnCancel, .btn_error {
+    height: 35px; /* Légèrement plus haut pour le confort */
+    width: 90px;  /* Un peu plus large pour le texte */
+    border-radius: 6px; /* Bootstrap utilise des arrondis plus légers (4-6px) */
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out; /* Pour une animation fluide */
+    color: white; /* Texte en blanc pour le contraste */
+}
+
+/* Bouton Valider (Ton bleu actuel) */
+#btnSumbit {
+    background-color: #4FE9FF;
+    color: #000; /* Texte noir car le bleu est clair */
+}
+
+/* Effet Hover pour le bouton Valider */
+#btnSumbit:hover {
+    background-color: #26d4ee; /* Bleu un peu plus foncé */
+    box-shadow: 0 4px 8px rgba(79, 233, 255, 0.3); /* Halo bleu */
+    transform: translateY(-1px); /* Petit saut vers le haut */
+}
+
+/* Boutons Annuler et Erreur (Rouge) */
+#btnCancel, .btn_error {
+    background-color: #FF0000;
+}
+
+/* Effet Hover pour les boutons rouges */
+#btnCancel:hover, .btn_error:hover {
+    background-color: #cc0000;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Effet au clic (Active) */
+#btnSumbit:active, #btnCancel:active {
+    transform: translateY(0); /* Le bouton s'enfonce */
+    box-shadow: none;
+}
+
+/* Ta classe d'erreur */
+.err {
+    color: #FF0000;
+    display: block;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+/* Remplacez le ; par un . */
+.div-error {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0; /* Un peu d'espace en haut et en bas */
+}
+
+/* Style pour le lien pour qu'il remplisse le bouton */
+.btn_error {
+    padding: 0; /* Enlever le padding interne du bouton */
+}
+
+.btn_error a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: inherit; /* Garde la couleur du bouton */
+    width: 100%;
+    height: 100%;
+}
+#btnSumbit:hover,#btnCancel:hover,.btn_error:hover{
+    cursor: pointer;
+}
+
+
+/*********Le style des selects pour la reservation ***********/
+/* ===== STYLES POUR LES SELECTS ===== */
+
+/* Style de base pour tous les selects */
+select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;  /* Supprime la flèche par défaut */
+    
+    /* Flèche personnalisée */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+}
+
+/* Effet au survol */
+select:hover {
+    border-color: #999;
+}
+
+/* Effet quand le select est focus (cliqué) */
+select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/* Style des options à l'intérieur */
+option {
+    padding: 10px;
+}
+
+/* Première option (placeholder) */
+option:first-child {
+    color: #999;
+    font-style: italic;
+}
+
+/* Option sélectionnée */
+option:checked {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* ===== STYLES SPECIFIQUES ===== */
+
+/* Select du professeur (id=prof) */
+#prof {
+    border-left: 4px solid #2196F3;
+}
+
+/* Select de la salle (id=salle) */
+#salle {
+    border-left: 4px solid #FF9800;
+}
+
+
+
+/* ===== MISE EN PAGE DES LABELS ===== */
+
+/* Style des labels */
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+}
+
+

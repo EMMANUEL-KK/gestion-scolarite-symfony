@@ -1,0 +1,43 @@
+﻿<!-- Designed and developed by Prof. Ahmed ZINEDINE -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}e-FSDM{% endblock %}</title>
+	
+    <link rel="stylesheet" href="{{asset('CSS/style.css')}}">
+</head>
+<body>
+
+<header class="site-header">
+    <img src="{{asset('images/fsdm.jpg')}}" alt="Logo FSDM" class="logo">
+    <div class="header-text">
+        <h1>SMI6</h1>
+        <p>Faculté des Sciences Dhar El Mahraz, Fès</p>
+    </div>
+</header>
+
+<section class="date">
+    <h4>{{"now" | date('d/m/Y')}}</h4>
+</section>
+
+
+<main class="layout">
+    <aside class="sidebar">
+        {{include('Layout/menu.html.twig')}} 
+    </aside>
+    <section class="content">
+        {% block content %}
+        
+        {% endblock %}
+    </section>
+</main>
+
+<footer class="site-footer">
+    <p>&copy; SMI6 {{ "now" |date('Y')}} - Faculté des Sciences Dhar El Mahraz</p>
+    <p>Contact : smi6@fsdm.usmba.ac.ma</p>
+</footer>
+
+</body>
+</html>
